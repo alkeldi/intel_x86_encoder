@@ -1,0 +1,30 @@
+#all lines must have three fields
+#8 bit
+AL        |0       |r8
+CL        |1       |r8
+DL        |2       |r8
+BL        |3       |r8
+AH        |4       |r8
+CH        |5       |r8
+DH        |6       |r8
+BH        |7       |r8
+
+#16 bit
+AX        |0       |r16
+CX        |1       |r16
+DX        |2       |r16
+BX        |3       |r16
+SP        |4       |r16
+BP        |5       |r16
+SI        |6       |r16
+DI        |7       |r16
+
+#32 bit
+EAX        |0       |r32
+ECX        |1       |r32
+EDX        |2       |r32
+EBX        |3       |r32
+ESP        |4       |r32
+EBP        |5       |r32
+ESI        |6       |r32
+EDI        |7       |r32

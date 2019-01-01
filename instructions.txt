@@ -1,0 +1,51 @@
+#Opcode                                 |Instruction                                                 |Op/En     |64-bit    |Compat/Leg                    |Description
+D5 0A                                   |AAD                                                         |NP        |Invalid   |Valid                         |ASCII adjust AX before division.
+D5 ib                                   |AAD imm8                                                    |NP        |Invalid   |Valid                         |Adjust AX before division to number base imm8.
+D4 0A                                   |AAM                                                         |NP        |Invalid   |Valid                         |ASCII adjust AX after multiply.
+D4 ib                                   |AAM imm8                                                    |NP        |Invalid   |Valid                         |Adjust AX after multiply to number base imm8.
+3F                                      |AAS                                                         |NP        |Invalid   |Valid                         |ASCII adjust AL after subtraction.
+14 ib                                   |ADC AL, imm8                                                |I         |Valid     |Valid                         |Add with carry imm8 to AL.
+15 iw                                   |ADC AX, imm16                                               |I         |Valid     |Valid                         |Add with carry imm16 to AX.
+15 id                                   |ADC EAX, imm32                                              |I         |Valid     |Valid                         |Add with carry imm32 to EAX.
+80 /2 ib                                |ADC r/m8, imm8                                              |MI        |Valid     |Valid                         |Add with carry imm8 to r/m8.
+81 /2 iw                                |ADC r/m16, imm16                                            |MI        |Valid     |Valid                         |Add with carry imm16 to r/m16.
+81 /2 id                                |ADC r/m32, imm32                                            |MI        |Valid     |Valid                         |Add with CF imm32 to r/m32.
+83 /2 ib                                |ADC r/m16, imm8                                             |MI        |Valid     |Valid                         |Add with CF sign-extended imm8 to r/m16.
+83 /2 ib                                |ADC r/m32, imm8                                             |MI        |Valid     |Valid                         |Add with CF sign-extended imm8 into r/m32.
+10 /r                                   |ADC r/m8, r8                                                |MR        |Valid     |Valid                         |Add with carry byte register to r/m8.
+11 /r                                   |ADC r/m16, r16                                              |MR        |Valid     |Valid                         |Add with carry r16 to r/m16.
+11 /r                                   |ADC r/m32, r32                                              |MR        |Valid     |Valid                         |Add with CF r32 to r/m32.
+12 /r                                   |ADC r8, r/m8                                                |RM        |Valid     |Valid                         |Add with carry r/m8 to byte register.
+13 /r                                   |ADC r16, r/m16                                              |RM        |Valid     |Valid                         |Add with carry r/m16 to r16.
+13 /r                                   |ADC r32, r/m32                                              |RM        |Valid     |Valid                         |Add with CF r/m32 to r32.
+66 0F 38 F6 /r                          |ADCX r32, r/m32                                             |RM        |V/V       |ADX                           |Unsigned addition of r32 with CF, r/m32 to r32, writes CF.
+04 ib                                   |ADD AL, imm8                                                |I         |Valid     |Valid                         |Add imm8 to AL.
+05 iw                                   |ADD AX, imm16                                               |I         |Valid     |Valid                         |Add imm16 to AX.
+05 id                                   |ADD EAX, imm32                                              |I         |Valid     |Valid                         |Add imm32 to EAX.
+80 /0 ib                                |ADD r/m8, imm8                                              |MI        |Valid     |Valid                         |Add imm8 to r/m8.
+81 /0 iw                                |ADD r/m16, imm16                                            |MI        |Valid     |Valid                         |Add imm16 to r/m16.
+81 /0 id                                |ADD r/m32, imm32                                            |MI        |Valid     |Valid                         |Add imm32 to r/m32.
+83 /0 ib                                |ADD r/m16, imm8                                             |MI        |Valid     |Valid                         |Add sign-extended imm8 to r/m16.
+83 /0 ib                                |ADD r/m32, imm8                                             |MI        |Valid     |Valid                         |Add sign-extended imm8 to r/m32.
+00 /r                                   |ADD r/m8, r8                                                |MR        |Valid     |Valid                         |Add r8 to r/m8.
+01 /r                                   |ADD r/m16, r16                                              |MR        |Valid     |Valid                         |Add r16 to r/m16.
+01 /r                                   |ADD r/m32, r32                                              |MR        |Valid     |Valid                         |Add r32 to r/m32.
+02 /r                                   |ADD r8, r/m8                                                |RM        |Valid     |Valid                         |Add r/m8 to r8.
+03 /r                                   |ADD r16, r/m16                                              |RM        |Valid     |Valid                         |Add r/m16 to r16.
+03 /r                                   |ADD r32, r/m32                                              |RM        |Valid     |Valid                         |Add r/m32 to r32.
+F3 0F 38 F6 /r                          |ADOX r32, r/m32                                             |RM        |V/V       |ADX                           |Unsigned addition of r32 with OF, r/m32 to r32, writes OF.
+24 ib                                   |AND AL, imm8                                                |I         |Valid     |Valid                         |AL AND imm8.
+25 iw                                   |AND AX, imm16                                               |I         |Valid     |Valid                         |AX AND imm16.
+25 id                                   |AND EAX, imm32                                              |I         |Valid     |Valid                         |EAX AND imm32.
+80 /4 ib                                |AND r/m8, imm8                                              |MI        |Valid     |Valid                         |r/m8 AND imm8.
+81 /4 iw                                |AND r/m16, imm16                                            |MI        |Valid     |Valid                         |r/m16 AND imm16.
+81 /4 id                                |AND r/m32, imm32                                            |MI        |Valid     |Valid                         |r/m32 AND imm32.
+83 /4 ib                                |AND r/m16, imm8                                             |MI        |Valid     |Valid                         |r/m16 AND imm8 (sign-extended).
+83 /4 ib                                |AND r/m32, imm8                                             |MI        |Valid     |Valid                         |r/m32 AND imm8 (sign-extended).
+20 /r                                   |AND r/m8, r8                                                |MR        |Valid     |Valid                         |r/m8 AND r8.
+21 /r                                   |AND r/m16, r16                                              |MR        |Valid     |Valid                         |r/m16 AND r16.
+21 /r                                   |AND r/m32, r32                                              |MR        |Valid     |Valid                         |r/m32 AND r32.
+22 /r                                   |AND r8, r/m8                                                |RM        |Valid     |Valid                         |r8 AND r/m8.
+23 /r                                   |AND r16, r/m16                                              |RM        |Valid     |Valid                         |r16 AND r/m16.
+23 /r                                   |AND r32, r/m32                                              |RM        |Valid     |Valid                         |r32 AND r/m32.
+63 /r                                   |ARPL r/m16, r16                                             |NP        |N. E.     |Valid                         |Adjust RPL of r/m16 to not less than RPL of r16

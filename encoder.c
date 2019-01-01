@@ -186,7 +186,7 @@ void fill_formated_instruction_with_defaults(formated_instruction_t *formated, c
   {
     if (!token)
       break;
-      
+
     /* check errors */
     if (strlen(token) != 2)
     {
@@ -488,7 +488,7 @@ void str_to_input_instruction(char *_str, formated_input_instruction_t *inst)
     return;
 
   /* temporary copy the string */
-  char *str = malloc(strlen(_str));
+  char *str = malloc(strlen(_str)+1);
   strcpy(str, _str);
 
   rtrim(str);

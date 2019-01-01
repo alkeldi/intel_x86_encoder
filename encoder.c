@@ -184,6 +184,9 @@ void fill_formated_instruction_with_defaults(formated_instruction_t *formated, c
   char *token = strtok(default_encoding, " ");
   do
   {
+    if (!token)
+      break;
+      
     /* check errors */
     if (strlen(token) != 2)
     {

@@ -172,7 +172,7 @@ void fill_formated_instruction_with_defaults(formated_instruction_t *formated, c
     return;
   /* copy string to heap */
   size_t default_encoding_len = strlen(_default_encoding);
-  char *default_encoding = malloc(default_encoding_len);
+  char *default_encoding = malloc(default_encoding_len + 1);
   strcpy(default_encoding, _default_encoding);
 
   /* read information */
@@ -408,6 +408,9 @@ TST *init_instructions_table(char *instructions_file)
     /* add entry to table */
     TST_put(instructions_table, readable_encoding, table_entry);
   }
+  /* free line if buffer is allocated */
+  if (line)
+    free(line);
   /* close instructions file */
   fclose(inst_f);
   return instructions_table;
@@ -462,6 +465,9 @@ TST *init_registers_table(char *registers_file)
     /* add entry to table */
     TST_put(registers_table, reg_name, table_entry);
   }
+  /* free line if buffer is allocated */
+  if (line)
+    free(line);
   /* close registers file */
   fclose(reg_f);
   return registers_table;
@@ -490,7 +496,7 @@ void str_to_input_instruction(char *_str, formated_input_instruction_t *inst)
   /* temporary copy the string */
   size_t len = strlen(_str);
   char *str = malloc(len + 1);
-  stpncpy(str, _str, len);
+  strcpy(str, _str);
 
   rtrim(str);
   char *opcode = strtok(str, " ");

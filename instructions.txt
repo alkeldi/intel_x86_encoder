@@ -49,3 +49,174 @@ F3 0F 38 F6 /r                          |ADOX r32, r/m32                        
 23 /r                                   |AND r16, r/m16                                              |RM        |Valid     |Valid                         |r16 AND r/m16.
 23 /r                                   |AND r32, r/m32                                              |RM        |Valid     |Valid                         |r32 AND r/m32.
 63 /r                                   |ARPL r/m16, r16                                             |NP        |N. E.     |Valid                         |Adjust RPL of r/m16 to not less than RPL of r16
+Opcode                                  |Instruction                                                 |Op/En     |64-bit    |Compat/Leg                    |Description
+D5 0A                                   |AAD                                                         |NP        |Invalid   |Valid                         |ASCII adjust AX before division.
+D5 ib                                   |AAD imm8                                                    |NP        |Invalid   |Valid                         |Adjust AX before division to number base imm8.
+D4 0A                                   |AAM                                                         |NP        |Invalid   |Valid                         |ASCII adjust AX after multiply.
+D4 ib                                   |AAM imm8                                                    |NP        |Invalid   |Valid                         |Adjust AX after multiply to number base imm8.
+3F                                      |AAS                                                         |NP        |Invalid   |Valid                         |ASCII adjust AL after subtraction.
+14 ib                                   |ADC AL, imm8                                                |I         |Valid     |Valid                         |Add with carry imm8 to AL.
+15 iw                                   |ADC AX, imm16                                               |I         |Valid     |Valid                         |Add with carry imm16 to AX.
+15 id                                   |ADC EAX, imm32                                              |I         |Valid     |Valid                         |Add with carry imm32 to EAX.
+80 /2 ib                                |ADC r/m8, imm8                                              |MI        |Valid     |Valid                         |Add with carry imm8 to r/m8.
+81 /2 iw                                |ADC r/m16, imm16                                            |MI        |Valid     |Valid                         |Add with carry imm16 to r/m16.
+81 /2 id                                |ADC r/m32, imm32                                            |MI        |Valid     |Valid                         |Add with CF imm32 to r/m32.
+83 /2 ib                                |ADC r/m16, imm8                                             |MI        |Valid     |Valid                         |Add with CF sign-extended imm8 to r/m16.
+83 /2 ib                                |ADC r/m32, imm8                                             |MI        |Valid     |Valid                         |Add with CF sign-extended imm8 into r/m32.
+10 /r                                   |ADC r/m8, r8                                                |MR        |Valid     |Valid                         |Add with carry byte register to r/m8.
+11 /r                                   |ADC r/m16, r16                                              |MR        |Valid     |Valid                         |Add with carry r16 to r/m16.
+11 /r                                   |ADC r/m32, r32                                              |MR        |Valid     |Valid                         |Add with CF r32 to r/m32.
+12 /r                                   |ADC r8, r/m8                                                |RM        |Valid     |Valid                         |Add with carry r/m8 to byte register.
+13 /r                                   |ADC r16, r/m16                                              |RM        |Valid     |Valid                         |Add with carry r/m16 to r16.
+13 /r                                   |ADC r32, r/m32                                              |RM        |Valid     |Valid                         |Add with CF r/m32 to r32.
+66 0F 38 F6 /r                          |ADCX r32, r/m32                                             |RM        |V/V       |ADX                           |Unsigned addition of r32 with CF, r/m32 to r32, writes CF.
+04 ib                                   |ADD AL, imm8                                                |I         |Valid     |Valid                         |Add imm8 to AL.
+05 iw                                   |ADD AX, imm16                                               |I         |Valid     |Valid                         |Add imm16 to AX.
+05 id                                   |ADD EAX, imm32                                              |I         |Valid     |Valid                         |Add imm32 to EAX.
+80 /0 ib                                |ADD r/m8, imm8                                              |MI        |Valid     |Valid                         |Add imm8 to r/m8.
+81 /0 iw                                |ADD r/m16, imm16                                            |MI        |Valid     |Valid                         |Add imm16 to r/m16.
+81 /0 id                                |ADD r/m32, imm32                                            |MI        |Valid     |Valid                         |Add imm32 to r/m32.
+83 /0 ib                                |ADD r/m16, imm8                                             |MI        |Valid     |Valid                         |Add sign-extended imm8 to r/m16.
+83 /0 ib                                |ADD r/m32, imm8                                             |MI        |Valid     |Valid                         |Add sign-extended imm8 to r/m32.
+00 /r                                   |ADD r/m8, r8                                                |MR        |Valid     |Valid                         |Add r8 to r/m8.
+01 /r                                   |ADD r/m16, r16                                              |MR        |Valid     |Valid                         |Add r16 to r/m16.
+01 /r                                   |ADD r/m32, r32                                              |MR        |Valid     |Valid                         |Add r32 to r/m32.
+02 /r                                   |ADD r8, r/m8                                                |RM        |Valid     |Valid                         |Add r/m8 to r8.
+03 /r                                   |ADD r16, r/m16                                              |RM        |Valid     |Valid                         |Add r/m16 to r16.
+03 /r                                   |ADD r32, r/m32                                              |RM        |Valid     |Valid                         |Add r/m32 to r32.
+F3 0F 38 F6 /r                          |ADOX r32, r/m32                                             |RM        |V/V       |ADX                           |Unsigned addition of r32 with OF, r/m32 to r32, writes OF.
+24 ib                                   |AND AL, imm8                                                |I         |Valid     |Valid                         |AL AND imm8.
+25 iw                                   |AND AX, imm16                                               |I         |Valid     |Valid                         |AX AND imm16.
+25 id                                   |AND EAX, imm32                                              |I         |Valid     |Valid                         |EAX AND imm32.
+80 /4 ib                                |AND r/m8, imm8                                              |MI        |Valid     |Valid                         |r/m8 AND imm8.
+81 /4 iw                                |AND r/m16, imm16                                            |MI        |Valid     |Valid                         |r/m16 AND imm16.
+81 /4 id                                |AND r/m32, imm32                                            |MI        |Valid     |Valid                         |r/m32 AND imm32.
+83 /4 ib                                |AND r/m16, imm8                                             |MI        |Valid     |Valid                         |r/m16 AND imm8 (sign-extended).
+83 /4 ib                                |AND r/m32, imm8                                             |MI        |Valid     |Valid                         |r/m32 AND imm8 (sign-extended).
+20 /r                                   |AND r/m8, r8                                                |MR        |Valid     |Valid                         |r/m8 AND r8.
+21 /r                                   |AND r/m16, r16                                              |MR        |Valid     |Valid                         |r/m16 AND r16.
+21 /r                                   |AND r/m32, r32                                              |MR        |Valid     |Valid                         |r/m32 AND r32.
+22 /r                                   |AND r8, r/m8                                                |RM        |Valid     |Valid                         |r8 AND r/m8.
+23 /r                                   |AND r16, r/m16                                              |RM        |Valid     |Valid                         |r16 AND r/m16.
+23 /r                                   |AND r32, r/m32                                              |RM        |Valid     |Valid                         |r32 AND r/m32.
+63 /r                                   |ARPL r/m16, r16                                             |NP        |N. E.     |Valid                         |Adjust RPL of r/m16 to not less than RPL of r16
+E8 cw                                   |CALL rel16                                                  |M         |N.S.      |Valid                         |Call near, relative, displacement relative to next instruction.
+E8 cd                                   |CALL rel32                                                  |M         |Valid     |Valid                         |Call near, relative, displacement relative to next instruction. 32-bit displacement sign extended to 64-bits in 64-bit mode.
+FF /2                                   |CALL r/m16                                                  |M         |N.E.      |Valid                         |Call near, absolute indirect, address given in r/m16.
+FF /2                                   |CALL r/m32                                                  |M         |N.E.      |Valid                         |Call near, absolute indirect, address given in r/m32.
+FF /2                                   |CALL r/m64                                                  |M         |Valid     |N.E.                          |Call near, absolute indirect, address given in r/m64.
+98                                      |CBW                                                         |NP        |Valid     |Valid                         |AX <- sign-extend of AL.
+98                                      |CWDE                                                        |NP        |Valid     |Valid                         |EAX <- sign-extend of AX.
+0F 01 CA                                |CLAC                                                        |NP        |V/V       |SMAP                          |Clear the AC flag in the EFLAGS register.
+F8                                      |CLC                                                         |NP        |Valid     |Valid                         |Clear CF flag.
+FC                                      |CLD                                                         |NP        |Valid     |Valid                         |Clear DF flag.
+0F AE /7                                |CLFLUSH m8                                                  |M         |Valid     |Valid                         |Flushes cache line containing m8.
+66 0F AE /7                             |CLFLUSHOPT m8                                               |M         |Valid     |Valid                         |Flushes cache line containing m8.
+FA                                      |CLI                                                         |NP        |Valid     |Valid                         |Clear interrupt flag; interrupts disabled when interrupt flag cleared.
+0F 06                                   |CLTS                                                        |NP        |Valid     |Valid                         |Clears TS flag in CR0.
+66 0F AE /6                             |CLWB m8                                                     |M         |V/V       |CLWB                          |Writes back modified cache line containing m8, and may retain the line in cache hierarchy in non-modified state.
+F5                                      |CMC                                                         |NP        |Valid     |Valid                         |Complement CF flag.
+0F 47 /r                                |CMOVA r16, r/m16                                            |RM        |Valid     |Valid                         |Move if above (CF=0 and ZF=0).
+0F 47 /r                                |CMOVA r32, r/m32                                            |RM        |Valid     |Valid                         |Move if above (CF=0 and ZF=0).
+0F 43 /r                                |CMOVAE r16, r/m16                                           |RM        |Valid     |Valid                         |Move if above or equal (CF=0).
+0F 43 /r                                |CMOVAE r32, r/m32                                           |RM        |Valid     |Valid                         |Move if above or equal (CF=0).
+0F 42 /r                                |CMOVB r16, r/m16                                            |RM        |Valid     |Valid                         |Move if below (CF=1).
+0F 42 /r                                |CMOVB r32, r/m32                                            |RM        |Valid     |Valid                         |Move if below (CF=1).
+0F 46 /r                                |CMOVBE r16, r/m16                                           |RM        |Valid     |Valid                         |Move if below or equal (CF=1 or ZF=1).
+0F 46 /r                                |CMOVBE r32, r/m32                                           |RM        |Valid     |Valid                         |Move if below or equal (CF=1 or ZF=1).
+0F 42 /r                                |CMOVC r16, r/m16                                            |RM        |Valid     |Valid                         |Move if carry (CF=1).
+0F 42 /r                                |CMOVC r32, r/m32                                            |RM        |Valid     |Valid                         |Move if carry (CF=1).
+0F 44 /r                                |CMOVE r16, r/m16                                            |RM        |Valid     |Valid                         |Move if equal (ZF=1).
+0F 44 /r                                |CMOVE r32, r/m32                                            |RM        |Valid     |Valid                         |Move if equal (ZF=1).
+0F 4F /r                                |CMOVG r16, r/m16                                            |RM        |Valid     |Valid                         |Move if greater (ZF=0 and SF=OF).
+0F 4F /r                                |CMOVG r32, r/m32                                            |RM        |Valid     |Valid                         |Move if greater (ZF=0 and SF=OF).
+0F 4D /r                                |CMOVGE r16, r/m16                                           |RM        |Valid     |Valid                         |Move if greater or equal (SF=OF).
+0F 4D /r                                |CMOVGE r32, r/m32                                           |RM        |Valid     |Valid                         |Move if greater or equal (SF=OF).
+0F 4C /r                                |CMOVL r16, r/m16                                            |RM        |Valid     |Valid                         |Move if less (SF≠ OF).
+0F 4C /r                                |CMOVL r32, r/m32                                            |RM        |Valid     |Valid                         |Move if less (SF≠ OF).
+0F 4E /r                                |CMOVLE r16, r/m16                                           |RM        |Valid     |Valid                         |Move if less or equal (ZF=1 or SF≠ OF).
+0F 4E /r                                |CMOVLE r32, r/m32                                           |RM        |Valid     |Valid                         |Move if less or equal (ZF=1 or SF≠ OF).
+0F 46 /r                                |CMOVNA r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not above (CF=1 or ZF=1).
+0F 46 /r                                |CMOVNA r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not above (CF=1 or ZF=1).
+0F 42 /r                                |CMOVNAE r16, r/m16                                          |RM        |Valid     |Valid                         |Move if not above or equal (CF=1).
+0F 42 /r                                |CMOVNAE r32, r/m32                                          |RM        |Valid     |Valid                         |Move if not above or equal (CF=1).
+0F 43 /r                                |CMOVNB r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not below (CF=0).
+0F 43 /r                                |CMOVNB r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not below (CF=0).
+0F 47 /r                                |CMOVNBE r16, r/m16                                          |RM        |Valid     |Valid                         |Move if not below or equal (CF=0 and ZF=0).
+0F 47 /r                                |CMOVNBE r32, r/m32                                          |RM        |Valid     |Valid                         |Move if not below or equal (CF=0 and ZF=0).
+0F 43 /r                                |CMOVNC r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not carry (CF=0).
+0F 43 /r                                |CMOVNC r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not carry (CF=0).
+0F 45 /r                                |CMOVNE r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not equal (ZF=0).
+0F 45 /r                                |CMOVNE r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not equal (ZF=0).
+0F 4E /r                                |CMOVNG r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not greater (ZF=1 or SF≠ OF).
+0F 4E /r                                |CMOVNG r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not greater (ZF=1 or SF≠ OF).
+0F 4C /r                                |CMOVNGE r16, r/m16                                          |RM        |Valid     |Valid                         |Move if not greater or equal (SF≠ OF).
+0F 4C /r                                |CMOVNGE r32, r/m32                                          |RM        |Valid     |Valid                         |Move if not greater or equal (SF≠ OF).
+0F 4D /r                                |CMOVNL r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not less (SF=OF).
+0F 4D /r                                |CMOVNL r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not less (SF=OF).
+0F 4F /r                                |CMOVNLE r16, r/m16                                          |RM        |Valid     |Valid                         |Move if not less or equal (ZF=0 and SF=OF).
+0F 4F /r                                |CMOVNLE r32, r/m32                                          |RM        |Valid     |Valid                         |Move if not less or equal (ZF=0 and SF=OF).
+0F 41 /r                                |CMOVNO r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not overflow (OF=0).
+0F 41 /r                                |CMOVNO r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not overflow (OF=0).
+0F 4B /r                                |CMOVNP r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not parity (PF=0).
+0F 4B /r                                |CMOVNP r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not parity (PF=0).
+0F 49 /r                                |CMOVNS r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not sign (SF=0).
+0F 49 /r                                |CMOVNS r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not sign (SF=0).
+0F 45 /r                                |CMOVNZ r16, r/m16                                           |RM        |Valid     |Valid                         |Move if not zero (ZF=0).
+0F 45 /r                                |CMOVNZ r32, r/m32                                           |RM        |Valid     |Valid                         |Move if not zero (ZF=0).
+0F 40 /r                                |CMOVO r16, r/m16                                            |RM        |Valid     |Valid                         |Move if overflow (OF=1).
+0F 40 /r                                |CMOVO r32, r/m32                                            |RM        |Valid     |Valid                         |Move if overflow (OF=1).
+0F 4A /r                                |CMOVP r16, r/m16                                            |RM        |Valid     |Valid                         |Move if parity (PF=1).
+0F 4A /r                                |CMOVP r32, r/m32                                            |RM        |Valid     |Valid                         |Move if parity (PF=1).
+0F 4A /r                                |CMOVPE r16, r/m16                                           |RM        |Valid     |Valid                         |Move if parity even (PF=1).
+0F 4A /r                                |CMOVPE r32, r/m32                                           |RM        |Valid     |Valid                         |Move if parity even (PF=1).
+0F 4B /r                                |CMOVPO r16, r/m16                                           |RM        |Valid     |Valid                         |Move if parity odd (PF=0).
+0F 4B /r                                |CMOVPO r32, r/m32                                           |RM        |Valid     |Valid                         |Move if parity odd (PF=0).
+0F 48 /r                                |CMOVS r16, r/m16                                            |RM        |Valid     |Valid                         |Move if sign (SF=1).
+0F 48 /r                                |CMOVS r32, r/m32                                            |RM        |Valid     |Valid                         |Move if sign (SF=1).
+0F 44 /r                                |CMOVZ r16, r/m16                                            |RM        |Valid     |Valid                         |Move if zero (ZF=1).
+0F 44 /r                                |CMOVZ r32, r/m32                                            |RM        |Valid     |Valid                         |Move if zero (ZF=1).
+3C ib                                   |CMP AL, imm8                                                |I         |Valid     |Valid                         |Compare imm8 with AL.
+3D iw                                   |CMP AX, imm16                                               |I         |Valid     |Valid                         |Compare imm16 with AX.
+3D id                                   |CMP EAX, imm32                                              |I         |Valid     |Valid                         |Compare imm32 with EAX.
+80 /7 ib                                |CMP r/m8, imm8                                              |MI        |Valid     |Valid                         |Compare imm8 with r/m8.
+81 /7 iw                                |CMP r/m16, imm16                                            |MI        |Valid     |Valid                         |Compare imm16 with r/m16.
+81 /7 id                                |CMP r/m32, imm32                                            |MI        |Valid     |Valid                         |Compare imm32 with r/m32.
+83 /7 ib                                |CMP r/m16, imm8                                             |MI        |Valid     |Valid                         |Compare imm8 with r/m16.
+83 /7 ib                                |CMP r/m32, imm8                                             |MI        |Valid     |Valid                         |Compare imm8 with r/m32.
+38 /r                                   |CMP r/m8, r8                                                |MR        |Valid     |Valid                         |Compare r8 with r/m8.
+39 /r                                   |CMP r/m16, r16                                              |MR        |Valid     |Valid                         |Compare r16 with r/m16.
+39 /r                                   |CMP r/m32, r32                                              |MR        |Valid     |Valid                         |Compare r32 with r/m32.
+3A /r                                   |CMP r8, r/m8                                                |RM        |Valid     |Valid                         |Compare r/m8 with r8.
+3B /r                                   |CMP r16, r/m16                                              |RM        |Valid     |Valid                         |Compare r/m16 with r16.
+3B /r                                   |CMP r32, r/m32                                              |RM        |Valid     |Valid                         |Compare r/m32 with r32.
+A6                                      |CMPS m8, m8                                                 |NP        |Valid     |Valid                         |For legacy mode, compare byte at address DS:(E)SI with byte at address ES:(E)DI; For 64-bit mode compare byte at address (R|E)SI to byte at address (R|E)DI. The status flags are set accordingly.
+A7                                      |CMPS m16, m16                                               |NP        |Valid     |Valid                         |For legacy mode, compare word at address DS:(E)SI with word at address ES:(E)DI; For 64-bit mode compare word at address (R|E)SI with word at address (R|E)DI. The status flags are set accordingly.
+A7                                      |CMPS m32, m32                                               |NP        |Valid     |Valid                         |For legacy mode, compare dword at address DS:(E)SI at dword at address ES:(E)DI; For 64-bit mode compare dword at address (R|E)SI at dword at address (R|E)DI. The status flags are set accordingly.
+A6                                      |CMPSB                                                       |NP        |Valid     |Valid                         |For legacy mode, compare byte at address DS:(E)SI with byte at address ES:(E)DI; For 64-bit mode compare byte at address (R|E)SI with byte at address (R|E)DI. The status flags are set accordingly.
+A7                                      |CMPSW                                                       |NP        |Valid     |Valid                         |For legacy mode, compare word at address DS:(E)SI with word at address ES:(E)DI; For 64-bit mode compare word at address (R|E)SI with word at address (R|E)DI. The status flags are set accordingly.
+A7                                      |CMPSD                                                       |NP        |Valid     |Valid                         |For legacy mode, compare dword at address DS:(E)SI with dword at address ES:(E)DI; For 64-bit mode compare dword at address (R|E)SI with dword at address (R|E)DI. The status flags are set accordingly.
+0F B0/r                                 |CMPXCHG r/m8, r8                                            |MR        |Valid     |Valid*                        |Compare AL with r/m8. If equal, ZF is set and r8 is loaded into r/m8. Else, clear ZF and load r/m8 into AL.
+0F B1/r                                 |CMPXCHG r/m16, r16                                          |MR        |Valid     |Valid*                        |Compare AX with r/m16. If equal, ZF is set and r16 is loaded into r/m16. Else, clear ZF and load r/m16 into AX.
+0F B1/r                                 |CMPXCHG r/m32, r32                                          |MR        |Valid     |Valid*                        |Compare EAX with r/m32. If equal, ZF is set and r32 is loaded into r/m32. Else, clear ZF and load r/m32 into EAX.
+0F C7 /1 m64                            |CMPXCHG8B m64                                               |M         |Valid     |Valid*                        |Compare EDX:EAX with m64. If equal, set ZF and load ECX:EBX into m64. Else, clear ZF and load m64 into EDX:EAX.
+0F A2                                   |CPUID                                                       |NP        |Valid     |Valid                         |Returns processor identification and feature information to the EAX, EBX, ECX, and EDX registers, as determined by input entered in EAX (in some cases, ECX as well).
+F2 0F 38 F0 /r                          |CRC32 r32, r/m8                                             |RM        |Valid     |Valid                         |Accumulate CRC32 on r/m8.
+F2 0F 38 F1 /r                          |CRC32 r32, r/m16                                            |RM        |Valid     |Valid                         |Accumulate CRC32 on r/m16.
+F2 0F 38 F1 /r                          |CRC32 r32, r/m32                                            |RM        |Valid     |Valid                         |Accumulate CRC32 on r/m32.
+99                                      |CWD                                                         |NP        |Valid     |Valid                         |DX:AX <- sign-extend of AX.
+99                                      |CDQ                                                         |NP        |Valid     |Valid                         |EDX:EAX <- sign-extend of EAX.
+27                                      |DAA                                                         |NP        |Invalid   |Valid                         |Decimal adjust AL after addition.
+2F                                      |DAS                                                         |NP        |Invalid   |Valid                         |Decimal adjust AL after subtraction.
+FE /1                                   |DEC r/m8                                                    |M         |Valid     |Valid                         |Decrement r/m8 by 1.
+FF /1                                   |DEC r/m16                                                   |M         |Valid     |Valid                         |Decrement r/m16 by 1.
+FF /1                                   |DEC r/m32                                                   |M         |Valid     |Valid                         |Decrement r/m32 by 1.
+48+rw                                   |DEC r16                                                     |O         |N.E.      |Valid                         |Decrement r16 by 1.
+48+rd                                   |DEC r32                                                     |O         |N.E.      |Valid                         |Decrement r32 by 1.
+F6 /6                                   |DIV r/m8                                                    |M         |Valid     |Valid                         |Unsigned divide AX by r/m8, with result stored in AL <- Quotient, AH <- Remainder.
+F7 /6                                   |DIV r/m16                                                   |M         |Valid     |Valid                         |Unsigned divide DX:AX by r/m16, with result stored in AX <- Quotient, DX <- Remainder.
+F7 /6                                   |DIV r/m32                                                   |M         |Valid     |Valid                         |Unsigned divide EDX:EAX by r/m32, with result stored in EAX ← Quotient, EDX ← Remainder.
+0F 77                                   |EMMS                                                        |NP        |Valid     |Valid                         |Set the x87 FPU tag word to empty.
+C8 iw 00                                |ENTER imm16, 0                                              |II        |Valid     |Valid                         |Create a stack frame for a procedure.
+C8 iw 01                                |ENTER imm16,1                                               |II        |Valid     |Valid                         |Create a stack frame with a nested pointer for a procedure.
+C8 iw ib                                |ENTER imm16, imm8                                           |II        |Valid     |Valid                         |Create a stack frame with nested pointers for a procedure.
